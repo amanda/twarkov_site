@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% block head %}
+	<title>twarkov</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}"/>
+	{% endblock %}
+</head>
+<body>
+	{% block content %}
+	<div id="form" class="center">
+		<h1>twarkov?!</h1>
+		<form role="form" action="/generate" method="post">
+			<input name="username" type="text" placeholder="twitter username"></input><br />
+			<button type="submit">make a tweet!</button>
+		</form>
+	</div>
+	<div id="tweet" class="center">
+		{% if tweet %}
+		
+		{{ tweet }}
+		
+		<a class="twitter-share-button"
+		href="https://twitter.com/share"
+	  data-text="{{ tweet }}">
+		tweet this
+		</a>
+		{% endif %}
+	</div>
+{% endblock %}
+<script>
+window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+</script>
+</body>
+</html>
