@@ -3,9 +3,10 @@ web app for playing with twarkov, my markov text generator for twitter: [twarkov
 
 ## usage
 1. clone the repo
-2. run ```python app.py```
-3. see your tweets!
+2. install requirements with pip: ```pip install -r requirements.txt```
+2. run ```python app.py``` and head to localhost:5000 in your favorite browser
+3. enter yout twitter handle and see your new tweets!
 
 ## todo
 - error checking for if username entered doesn't exist (right now nothing happens)
-- routing issue: refreshing /generate should take you back to index.html, not /generate
+- routing issue: refreshing /generate should take you back to index
