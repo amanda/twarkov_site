@@ -1,7 +1,8 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request
 from twython import Twython, TwythonError
 from twarkov import *
 import os
+import json
 
 app = Flask(__name__)
 
@@ -48,11 +49,10 @@ def index():
 def generate_tweet():
     username = request.form['username']
     tweet = make_tweet(username)
-    return render_template('index.html', tweet=tweet)
-
+    return json.dumps({'tweet': tweet})
 
 # run the app
 if __name__ == '__main__':
-    #app.run(debug=True)
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
+    app.run(debug=True)
+    #port = int(os.environ.get('PORT', 5000))
+    #app.run(host='0.0.0.0', port=port)

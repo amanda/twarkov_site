@@ -14,38 +14,30 @@
 		<h1>twarkov!</h1>
 		<h3>make a tweet based on your timeline</h3>
 		
-		<form role="form" action="/generate" method="post">
+		<form role="form">
 			<input name="username" type="text" placeholder="twitter username"></input><br />
 			<button type="submit">generate</button>
 		</form>
 		
-		{% if tweet %}
-
-		<br />
-		~*~*~
-		<p>
-		{{ tweet }}
-		<p>
-		~*~*~
+	<div id="result">
+		
+		<p id="tweet">
+		</p>
 
 		<p class="right">
 		<a class="twitter-share-button"
 		href="https://twitter.com/share"
-	  data-text="{{ tweet }}"
-	  data-size="large"
-	  data-url="http://twarkov.herokuapp.com/">
+	  	data-text=""
+	  	data-size="large"
+	  	data-url="http://twarkov.herokuapp.com/">
 		tweet this
 		</a>
 		</p>
-		
-		{% endif %}
+	</div>		
 	
 	</div>
 {% endblock %}
 
-<script>
-window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
-</script>
-
+<script type="text/javascript" src="{{url_for('static', filename='script.js')}}"></script>
 </body>
 </html>
