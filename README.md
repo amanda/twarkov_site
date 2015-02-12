@@ -9,4 +9,4 @@ web app for playing with twarkov, my markov text generator for twitter: [twarkov
 
 ## todo
 - error checking for if username entered doesn't exist (right now nothing happens)
-- routing issue: refreshing /generate should take you back to index
+- ~~routing issue: refreshing /generate should take you back to index~~
