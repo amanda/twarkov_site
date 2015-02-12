@@ -41,12 +41,12 @@ p {
   color: black;
 }
 
-.right {
+#tweet-button {
   margin: 0 25% 0 38%;
  
 }
 
-.right {
+a {
   display: none;
 }
 
